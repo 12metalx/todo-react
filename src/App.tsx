@@ -10,14 +10,23 @@ export interface Itasks{
 const App = () =>{
 
     const [tasks, settasks] = useState<Itasks[]>([])
-    
+    const delTask = (id:string) =>{
+        settasks(tasks.filter(task => task.id !== id ))
+    }
+    const editTodo = ({id,task}: Itasks) => {
+        settasks(tasks.map((todo: Itasks)=>{
+            return(
+                todo.id === id ? {id:id,task:task} : todo
+            )
+        }))
+    }
     
     return(
         <main>
             <Form setTasks={settasks} tasks={tasks}/>
             {tasks.map(({id,task})=>{
                 return(
-                <Todo key={id} id={id} task={task} tasks={tasks} setTasks={settasks} />
+                <Todo key={id} id={id} task={task} tasks={tasks} setTasks={settasks} onSubmit={editTodo} />
                 )
             })}
         </main>

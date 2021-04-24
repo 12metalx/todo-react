@@ -9,8 +9,9 @@ interface Props {
     task: string;
     setTasks: React.Dispatch<React.SetStateAction<Itasks[]>>;
     tasks: Itasks[];
+    onSubmit: ({id,task}: Itasks) => void;
 }
-const Todo = ({id,task,setTasks,tasks}: Props) => {
+const Todo = ({id,task,setTasks,tasks,onSubmit}: Props) => {
     const [edit, setEdit] = useState<boolean>(false)
     const [editing, setEditing] = useState<string>("")
     const delTask = () =>{
@@ -26,9 +27,9 @@ const Todo = ({id,task,setTasks,tasks}: Props) => {
     }
     const handleSubmit = (e: React.FormEvent) =>{
         e.preventDefault()
-        const auxTask: Itasks | undefined = tasks.find(task => task.id === id)
-        setEditing("")
+        
         setEdit(false)
+        onSubmit({id:id,task:editing})
     }
     return (
         <section>
