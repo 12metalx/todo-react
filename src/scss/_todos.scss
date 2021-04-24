@@ -1,0 +1,30 @@
+main{
+    width: 30vw;
+    padding: 1rem 0 1rem 0;
+}
+section{
+    display: grid;
+    grid-template-columns: 6fr 1fr 1fr;
+    justify-content: space-between;
+    padding: 0.5rem 0 0.5rem 0;
+
+   
+    input{
+        background: #96bb7c;
+        color: #d6efc7;
+        border: none;
+        transition: 200ms;
+        border-radius: 0.5rem;
+    }
+
+    input:focus{
+        outline: none;
+        border: 1px solid;
+        transition: 200ms;
+    }
+    span{
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        cursor: pointer;
+    }
+}

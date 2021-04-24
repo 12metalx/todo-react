@@ -35,7 +35,7 @@ const Todo = ({id,task,setTasks,tasks,onSubmit}: Props) => {
         <section>
         {edit ? <form onSubmit={handleSubmit}>
             <input type="text" value={editing} onChange={handleChnage}/>
-        </form> : task}
+        </form> :<label>{task}</label> }
         
 
         <span onClick={delTask}>

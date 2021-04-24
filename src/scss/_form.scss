@@ -1,0 +1,42 @@
+body{
+    background: #184d47;
+}
+#app{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+#formTask{
+    display: flex;
+    justify-content: center;
+    width: 30vw;
+    color: #d6efc7;
+    input, button{
+        margin-left: 0.5rem;
+    }
+    button, input{
+        background: #96bb7c;
+        color: #d6efc7;
+        border: none;
+        transition: 200ms;
+        border-radius: 0.5rem;
+    }
+    button{
+        
+        padding: 0 1rem 0 1rem ;
+        
+        
+    }
+    button:hover{
+        transition: 200ms;
+        color: #96bb7c;
+        background: #d6efc7;
+    }
+    input:focus{
+        outline: none;
+        border: 1px solid;
+        transition: 200ms;
+    }
+}

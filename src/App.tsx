@@ -1,7 +1,7 @@
 import Form from "./modules/Form"
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 import Todo from "./modules/Todo"
-import {nanoid} from "nanoid"
+import "./scss/main.scss"
 
 export interface Itasks{
     id: string
@@ -22,14 +22,16 @@ const App = () =>{
     }
     
     return(
-        <main>
+        <>
             <Form setTasks={settasks} tasks={tasks}/>
+            <main>
             {tasks.map(({id,task})=>{
                 return(
                 <Todo key={id} id={id} task={task} tasks={tasks} setTasks={settasks} onSubmit={editTodo} />
                 )
             })}
-        </main>
+            </main>
+        </>
     );
 }
 export default App;
