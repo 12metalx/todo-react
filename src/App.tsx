@@ -10,9 +10,7 @@ export interface Itasks{
 const App = () =>{
 
     const [tasks, settasks] = useState<Itasks[]>([])
-    const delTask = (id:string) =>{
-        settasks(tasks.filter(task => task.id !== id ))
-    }
+    
     const editTodo = ({id,task}: Itasks) => {
         settasks(tasks.map((todo: Itasks)=>{
             return(
